@@ -213,7 +213,7 @@ def load_csv_file():
                 continue
             for i in range(5):
                 data_y[i].append(values[i])
-            x_data.append(idx)
+            x_data.append(idx * 50)
         counter = len(x_data)        
         scroll_slider.config(to=max(0, len(x_data) - int(points_entry.get())))
         scroll_slider.set(0)
@@ -260,7 +260,7 @@ def read_serial():
                     continue
                 for i in range(5):
                     data_y[i].append(values[i])
-                x_data.append(counter)
+                x_data.append(counter * 50)
                 counter += 1
                 data_updated = True
                 global data_ready
@@ -297,7 +297,7 @@ def animate(i):
             ax_base.set_xlim(0, window)
         canvas.draw_idle()
     except Exception as e:
-        print("Errore grafico:", e)
+        print("Plot Error:", e)
 
 root = tk.Tk()
 root.protocol("WM_DELETE_WINDOW", close_app)
@@ -337,7 +337,7 @@ ax_base.get_yaxis().set_visible(False)  # nasconde Y sinistro
 ax_base.tick_params(axis='x', colors='white')
 ax_base.spines['bottom'].set_color('white')
 ax_base.xaxis.label.set_color('white')
-ax_base.set_xlabel("Tempo (ms)", color='white')
+ax_base.set_xlabel("Time (ms)", color='white')
 
 ax_list = []
 for i in range(5):
@@ -406,7 +406,7 @@ baud_entry   = create_labeled_entry("Baud",  115200,     0, 2)
 points_entry = create_labeled_entry("Number of point", 200,        0, 4)
 
 # === Pulsanti principali ===
-connect_button = ttk.Button(controls, text="Connetti", command=toggle_connection)
+connect_button = ttk.Button(controls, text="Connect", command=toggle_connection)
 connect_button.grid(row=0, column=6, padx=5)
 ttk.Label(controls, text="").grid(row=0, column=8, padx=100)  # spazio vuoto
 ttk.Button(controls, text="Record", command=start_recording).grid(row=0, column=9, padx=5)
@@ -426,7 +426,7 @@ for i in range(5):
     scale_entries.append(scale_entry)
     unit_entries.append(unit_entry)
 
-save_button = ttk.Button(controls, text="Salva Config", command=save_config)
+save_button = ttk.Button(controls, text="Save Config", command=save_config)
 save_button.grid(row=7, column=0, columnspan=6, pady=10)
 
 
