@@ -4,7 +4,7 @@ Sensor Plot Data is a Python GUI application built with Tkinter, Matplotlib, and
 # Features
 - Live configuration Y-axis with labels, units, and  ranges
 - JSON config saving/loading
-- Live serial plotting 20 FPS
+- Live serial plotting 20Hz
 - CSV recording and playback
 - Scroll slider for navigating data during playback
 - Live configuration forscaling, labels, and more
