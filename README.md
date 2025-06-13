@@ -1,6 +1,9 @@
 # Sensor-Plot-Data
 Sensor Plot Data is a Python GUI application built with Tkinter, Matplotlib, and PySerial, designed to plot and record real-time serial data from microcontrollers like Arduino, ESP32. It supports 5 simultaneous data channels, real-time configuration, CSV recording/loading, and advanced multi-axis plotting.
 
+![image](https://github.com/user-attachments/assets/8c5310a6-3132-4ede-91b4-e02e775e2d79)
+
+
 # Features
 - Live configuration Y-axis with labels, units, and  ranges
 - JSON config saving/loading
